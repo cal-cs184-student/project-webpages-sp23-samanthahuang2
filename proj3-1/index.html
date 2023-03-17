@@ -83,13 +83,18 @@ Do <em>NOT</em> use absolute paths, such as <pre>"/Users/student/Desktop/image.j
 
 <div>
 
+-->
+
 <h2 align="middle">Overview</h2>
 <p>
-    YOUR RESPONSE GOES HERE
+    In this project, we started by implementing camera ray generation and the ray intersections with different objects. We then constructed
+	a BVH to make ray intersections with objects in the scene faster. We also implemented direct illumniation (zero and one bounce illumniation)
+	and utilized one bounce illumination to recursively get greater than one bounce illumination (indirect illumnation) which allows our
+	implementaiton to cover global illumination. Finally, we implemented adaptive sampling to only sample more on areas of the scene with more
+	complex areas.
 </p>
 <br>
 
--->
 
 <h2 align="middle">Part 1: Ray Generation and Scene Intersection (20 Points)</h2>
 <!-- Walk through the ray generation and primitive intersection parts of the rendering pipeline.
@@ -216,8 +221,10 @@ Compare rendering times on a few scenes with moderately complex geometries with 
   Compare rendering times on a few scenes with moderately complex geometries with and without BVH acceleration. Present your results in a one-paragraph analysis.
 </h3>
 <p>
-    Without BVH acceleration, the scenes we rendered with moderately complex geometries took approximately 1-2 minutes to render. While with BVH acceleration, the sames scenes were rendered in a couple seconds.
-</p>
+    Without BVH acceleration, the scenes we rendered with moderately complex geometries took longer to render than with BVH as seen in our table. We also attempted
+	to render wihtout BVH acceleration for more complex scences but they took much too long to actually render an image. With BVH acceleration, we were able to render
+	all images from simple to complex in a couple of seconds. The presence of BVH acceleration was most prominent when the scences were complex and almost insignificant
+	for the simple scenes.
 <br>
 
 <h2 align="middle">Part 3: Direct Illumination (20 Points)</h2>
