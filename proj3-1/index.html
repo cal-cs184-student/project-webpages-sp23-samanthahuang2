@@ -41,10 +41,10 @@
 
 <h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2023</h1>
 <h1 align="middle">Project 3-1: Path Tracer</h1>
-<h2 align="middle">YOUR NAME(S)</h2>
+<h2 align="middle">Samantha Huang and Nithin Tatikonda</h2>
 
 <!-- Add Website URL -->
-<h2 align="middle">Website URL: <a href="TODO">TODO</a></h2>
+<h2 align="middle">Website URL: <a href="https://cal-cs184-student.github.io/project-webpages-sp23-samanthahuang2/proj3-1/index.html">https://cal-cs184-student.github.io/project-webpages-sp23-samanthahuang2/proj3-1/index.html</a></h2>
 
 <br><br>
 
@@ -53,12 +53,13 @@
   <table style="width=100%">
       <tr>
           <td align="middle">
-          <img src="images/CB.png" width="480px" />
+          <img src="images/Part5Image1New.png" width="480px" />
           <figcaption align="middle">Results Caption: my bunny is the bounciest bunny</figcaption>
       </tr>
   </table>
 </div>
 
+<!--
 <p>All of the text in your write-up should be <em>in your own words</em>. If you need to add additional HTML features to this document, you can search the <a href="http://www.w3schools.com/">http://www.w3schools.com/</a> website for instructions. To edit the HTML, you can just copy and paste existing chunks and fill in the text and image file names appropriately.</p>
 <o>The website writeup is intended to be a self-contained walkthrough of the assignment: we want this to be a piece of work which showcases your understanding of relevant concepts through both mesh images as well as written explanations about what you did to complete each part of the assignment. Try to be as clear and organized as possible when writing about your own output files or extensions to the assignment. We want to understand what you've achieved and how you've done it!</p> 
 <p>If you are well-versed in web development, feel free to ditch this template and make a better looking page.</p>
@@ -87,6 +88,8 @@ Do <em>NOT</em> use absolute paths, such as <pre>"/Users/student/Desktop/image.j
     YOUR RESPONSE GOES HERE
 </p>
 <br>
+
+-->
 
 <h2 align="middle">Part 1: Ray Generation and Scene Intersection (20 Points)</h2>
 <!-- Walk through the ray generation and primitive intersection parts of the rendering pipeline.
@@ -136,17 +139,18 @@ Show images with normal shading for a few small .dae files. -->
   <table style="width:100%">
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>example1.dae</figcaption>
+        <img src="images/Part1Image1.png" align="middle" width="400px"/>
+        <figcaption>CBempty.dae</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>example2.dae</figcaption>
+        <img src="images/Part1Image2.png" align="middle" width="400px"/>
+        <figcaption>CBspheres_lambertian.dae</figcaption>
       </td>
     </tr>
+    <!--
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
+        <img src="images/.png" align="middle" width="400px"/>
         <figcaption>example3.dae</figcaption>
       </td>
       <td>
@@ -154,6 +158,7 @@ Show images with normal shading for a few small .dae files. -->
         <figcaption>example4.dae</figcaption>
       </td>
     </tr>
+    -->
   </table>
 </div>
 <br>
@@ -183,14 +188,15 @@ Compare rendering times on a few scenes with moderately complex geometries with 
   <table style="width:100%">
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>example1.dae</figcaption>
+        <img src="images/Part2Image1.png" align="middle" width="400px"/>
+        <figcaption>CBlucy.dae</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>example2.dae</figcaption>
+        <img src="images/Part2Image2.png" align="middle" width="400px"/>
+        <figcaption>maxplanck.dae</figcaption>
       </td>
     </tr>
+    <!--
     <tr align="center">
       <td>
         <img src="images/your_file.png" align="middle" width="400px"/>
@@ -201,6 +207,7 @@ Compare rendering times on a few scenes with moderately complex geometries with 
         <figcaption>example4.dae</figcaption>
       </td>
     </tr>
+    -->
   </table>
 </div>
 <br>
@@ -209,7 +216,7 @@ Compare rendering times on a few scenes with moderately complex geometries with 
   Compare rendering times on a few scenes with moderately complex geometries with and without BVH acceleration. Present your results in a one-paragraph analysis.
 </h3>
 <p>
-    /TODO
+    Without BVH acceleration, the scenes we rendered with moderately complex geometries took approximately 1-2 minutes to render. While with BVH acceleration, the sames scenes were rendered in a couple seconds.
 </p>
 <br>
 
@@ -253,23 +260,23 @@ Compare the results between uniform hemisphere sampling and lighting sampling in
     <br>
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>example1.dae</figcaption>
+        <img src="images/Part3Bullet2BunnyUni.png" align="middle" width="400px"/>
+        <figcaption>CBbunny.dae</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>example1.dae</figcaption>
+        <img src="images/Part3Bullet2BunnyImp.png" align="middle" width="400px"/>
+        <figcaption>CBbunny.dae</figcaption>
       </td>
     </tr>
     <br>
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>example2.dae</figcaption>
+        <img src="images/Part3Bullet2SpheresUni.png" align="middle" width="400px"/>
+        <figcaption>CBspheres_lambertian.dae</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>example2.dae</figcaption>
+        <img src="images/Part3Bullet2SpheresImp.png" align="middle" width="400px"/>
+        <figcaption>CBspheres_lambertian.dae</figcaption>
       </td>
     </tr>
     <br>
@@ -285,29 +292,28 @@ Compare the results between uniform hemisphere sampling and lighting sampling in
   <table style="width:100%">
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="200px"/>
+        <img src="images/Part3Bullet3_1.png" align="middle" width="200px"/>
         <figcaption>1 Light Ray (CBbunny.dae)</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="200px"/>
+        <img src="images/Part3Bullet3_4.png" align="middle" width="200px"/>
         <figcaption>4 Light Rays (CBbunny.dae)</figcaption>
       </td>
     </tr>
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="200px"/>
+        <img src="images/Part3Bullet3_16.png" align="middle" width="200px"/>
         <figcaption>16 Light Rays (CBbunny.dae)</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="200px"/>
+        <img src="images/Part3Bullet3_64.png" align="middle" width="200px"/>
         <figcaption>64 Light Rays (CBbunny.dae)</figcaption>
       </td>
     </tr>
   </table>
 </div>
 <p>
-    YOUR EXPLANATION GOES HERE
-    TODO
+    As we increased the light rays, our renders have lower noise levels in soft shadows.
 </p>
 <br>
 
@@ -315,7 +321,8 @@ Compare the results between uniform hemisphere sampling and lighting sampling in
   Compare the results between uniform hemisphere sampling and lighting sampling in a one-paragraph analysis.
 </h3>
 <p>
-    YOUR RESPONSE GOES HERE
+    By comparing the uniform hemisphere sampling and light sampling, we see that there is less noise in light sampling. This is because in light sampling we randomly sample from the area of the light source while in uniform sampling
+    we randomly sample the entire hemisphere and majority of the rays do not hit the light source.
 </p>
 <br>
 
@@ -350,12 +357,12 @@ You will probably want to use the instructional machines for the above renders i
   <table style="width:100%">
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>example1.dae</figcaption>
+        <img src="images/Part4Bullet2bunny.png" align="middle" width="400px"/>
+        <figcaption>CBbunny.dae</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>example2.dae</figcaption>
+        <img src="images/Part4Bullet2spheres.png" align="middle" width="400px"/>
+        <figcaption>CBspheres_lambertian.dae</figcaption>
       </td>
     </tr>
   </table>
@@ -370,19 +377,19 @@ You will probably want to use the instructional machines for the above renders i
   <table style="width:100%">
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>Only direct illumination (example1.dae)</figcaption>
+        <img src="images/Part4Bullet3Direct.png" align="middle" width="400px"/>
+        <figcaption>Only direct illumination (CBbunny.dae)</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>Only indirect illumination (example1.dae)</figcaption>
+        <img src="images/Part4Bullet3Indirect.png" align="middle" width="400px"/>
+        <figcaption>Only indirect illumination (CBbunny.dae)</figcaption>
       </td>
     </tr>
   </table>
 </div>
 <br>
 <p>
-    YOUR EXPLANATION GOES HERE
+    The direct illumniation is much brighter because parts of the image have reflection from light sources while the indirect illumination only contains reflection from non-light sources. Because of this in the direct illumination version, the ceiling is completely dark because it only has indirect reflection which isn't showcased in direct illumination.
 </p>
 <br>
 
@@ -394,27 +401,27 @@ You will probably want to use the instructional machines for the above renders i
   <table style="width:100%">
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
+        <img src="images/Part4Bullet4_0.png" align="middle" width="400px"/>
         <figcaption>max_ray_depth = 0 (CBbunny.dae)</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
+        <img src="images/Part4Bullet4_1.png" align="middle" width="400px"/>
         <figcaption>max_ray_depth = 1 (CBbunny.dae)</figcaption>
       </td>
     </tr>
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
+        <img src="images/Part4Bullet4_2.png" align="middle" width="400px"/>
         <figcaption>max_ray_depth = 2 (CBbunny.dae)</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
+        <img src="images/Part4Bullet4_3.png" align="middle" width="400px"/>
         <figcaption>max_ray_depth = 3 (CBbunny.dae)</figcaption>
       </td>
     </tr>
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
+        <img src="images/Part4Bullet4_100.png" align="middle" width="400px"/>
         <figcaption>max_ray_depth = 100 (CBbunny.dae)</figcaption>
       </td>
     </tr>
@@ -422,7 +429,7 @@ You will probably want to use the instructional machines for the above renders i
 </div>
 <br>
 <p>
-    YOUR EXPLANATION GOES HERE
+    As we increased the max_ray_depth, we see a gradual increase in the brightness of the scene. The difference was less noticeable for larger max_ray_depths. This is because the increase in max_ray_depth gives us more illumination from reflective surfaces.
 </p>
 <br>
 
@@ -434,45 +441,45 @@ You will probably want to use the instructional machines for the above renders i
   <table style="width:100%">
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>1 sample per pixel (example1.dae)</figcaption>
+        <img src="images/Part4Bullet5_1.png" align="middle" width="400px"/>
+        <figcaption>1 sample per pixel (CBbunny.dae)</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>2 samples per pixel (example1.dae)</figcaption>
-      </td>
-    </tr>
-    <tr align="center">
-      <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>4 samples per pixel (example1.dae)</figcaption>
-      </td>
-      <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>8 samples per pixel (example1.dae)</figcaption>
+        <img src="images/Part4Bullet5_2.png" align="middle" width="400px"/>
+        <figcaption>2 samples per pixel (CBbunny.dae)</figcaption>
       </td>
     </tr>
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>16 samples per pixel (example1.dae)</figcaption>
+        <img src="images/Part4Bullet5_4.png" align="middle" width="400px"/>
+        <figcaption>4 samples per pixel (CBbunny.dae)</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>64 samples per pixel (example1.dae)</figcaption>
+        <img src="images/Part4Bullet5_8.png" align="middle" width="400px"/>
+        <figcaption>8 samples per pixel (CBbunny.dae)</figcaption>
       </td>
     </tr>
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>1024 samples per pixel (example1.dae)</figcaption>
+        <img src="images/Part4Bullet5_16.png" align="middle" width="400px"/>
+        <figcaption>16 samples per pixel (CBbunny.dae)</figcaption>
+      </td>
+      <td>
+        <img src="images/Part4Bullet5_64.png" align="middle" width="400px"/>
+        <figcaption>64 samples per pixel (CBbunny.dae)</figcaption>
+      </td>
+    </tr>
+    <tr align="center">
+      <td>
+        <img src="images/Part4Bullet5_1024.png" align="middle" width="400px"/>
+        <figcaption>1024 samples per pixel (CBbunny.dae)</figcaption>
       </td>
     </tr>
   </table>
 </div>
 <br>
 <p>
-    YOUR EXPLANATION GOES HERE
+    As we increased the samples per pixel, there is less noise in the image rendered. This is because having more samples to average gets us a more accurate estimate of what the pixel value should be.
 </p>
 <br>
 
@@ -501,22 +508,22 @@ Pick one scene and render it with at least 2048 samples per pixel. Show a good s
   <table style="width:100%">
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>Rendered image (example1.dae)</figcaption>
+        <img src="images/Part5Image1New.png" align="middle" width="400px"/>
+        <figcaption>Rendered image (CBbunny.dae)</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>Sample rate image (example1.dae)</figcaption>
+        <img src="images/Part5Image2New.png" align="middle" width="400px"/>
+        <figcaption>Sample rate image (CBbunny.dae)</figcaption>
       </td>
     </tr>
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>Rendered image (example2.dae)</figcaption>
+        <img src="images/Part5Image3New.png" align="middle" width="400px"/>
+        <figcaption>Rendered image (CBspheres_lambertian.dae)</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>Sample rate image (example2.dae)</figcaption>
+        <img src="images/Part5Image4New.png" align="middle" width="400px"/>
+        <figcaption>Sample rate image (CBspheres_lambertian.dae)</figcaption>
       </td>
     </tr>
   </table>
