@@ -1,7 +1,320 @@
-<html>
-	<head>
-	</head>
-	<body>
-		Project 4 here
-	</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>
+  body {
+    padding: 100px;
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color: #121212;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+</style>
+<title>CS 184 Mesh Editor</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+</head>
+
+
+<body>
+<br />
+<h1 align="middle">Project 4: Cloth Simulator</h1>
+	<h2 align="middle">Nithin Tatikonda, Samantha Huang</h2>
+    <h2 align="middle">https://cal-cs184-student.github.io/project-webpages-sp23-samanthahuang2/proj4/index.html</h2>
+    
+	<div class="padded">
+    <h3 align="middle">Overview</h3>
+		<p>
+
+		</p>
+	<div>
+
+	<div class="padded">
+		<h3 align="middle">Part I: Masses and Springs</h3>
+		<div align="middle">
+            <table style="width:100%">
+              <tr align="center">
+                <td>
+                  <img src="images/Part1NoShearing.png" align="middle" width="400px"/>
+                  <figcaption>Wireframe without any shearing constraints</figcaption>
+                </td>
+                <td>
+                  <img src="images/Part1OnlyShearing.png" align="middle" width="400px"/>
+                  <figcaption>Wireframe with only shearing constraints</figcaption>
+                </td>
+              </tr>
+              <tr align="center">
+                <td>
+                  <img src="images/Part1AllConstraints.png" align="middle" width="400px"/>
+                  <figcaption>Wireframe with all constraints</figcaption>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <br>
+
+		<h3 align="middle">Part II: Simulatation via Numerical Integration</h3>
+		<div align="middle">
+            <table style="width:100%">
+              <tr align="center">
+                <td>
+                  <img src="images/Part2LowKs.png" align="middle" width="400px"/>
+                  <figcaption>Low ks</figcaption>
+                </td>
+                <td>
+                  <img src="images/Part2HighKs.png" align="middle" width="400px"/>
+                  <figcaption>High ks</figcaption>
+                </td>
+              </tr>
+			</table>
+			<p> The cloth becomes more stiff as the ks is increased and results in the cloth not folding over itself.
+				As seen in the images, the high ks is very stiff and the low ks shows the opposite with the cloth 
+				folding over itself.
+			</p>
+
+			<table>
+              <tr align="center">
+                <td>
+                  <img src="images/Part2LowDensity.png" align="middle" width="400px"/>
+                  <figcaption>Low Density</figcaption>
+                </td>
+				<td>
+					<img src="images/Part2HighDensity.png" align="middle" width="400px"/>
+					<figcaption>High Density</figcaption>
+				</td>
+              </tr>
+			</table>
+			<p>
+				The cloth becomes stiffer as the density decreases. Thus, the relationship is the opposite of what we just saw 
+				with ks. The lower density is more stiff so the cloth doesn't fold over itself while the opposite is seen with 
+				high density.
+			</p>
+
+			<table>
+			  <tr align="center">
+                <td>
+                  <img src="images/Part2LowDamping.png" align="middle" width="400px"/>
+                  <figcaption>Low Damping</figcaption>
+                </td>
+				<td>
+					<img src="images/Part2HighDamping.png" align="middle" width="400px"/>
+					<figcaption>High Damping</figcaption>
+				</td>
+              </tr>
+			</table>
+			<p>
+				The lower the damping the less stable the cloth is so there is much more movement in the lower damping image in
+				comparison to the high damping image.
+			</p>
+			<table>
+			  <tr align="center">
+                <td>
+                  <img src="images/Part2Final.png" align="middle" width="400px"/>
+                  <figcaption>Final Resting State (used default parameters)</figcaption>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+		<h3 align="middle">Part III: Handling Collisions with Other Objects</h3>
+		<div align="middle">
+            <table style="width:100%">
+              <tr align="left">
+				<td>
+					<img src="images/Part3ks5000.png" align="middle" width="400px"/>
+					<figcaption>Final State (ks = 5000)</figcaption>
+				  </td>
+                <td>
+                  <img src="images/Part3ks500.png" align="middle" width="400px"/>
+                  <figcaption> ks = 500</figcaption>
+                </td>
+                <td>
+                  <img src="images/Part3ks50000.png" align="middle" width="400px"/>
+                  <figcaption> ks = 50000</figcaption>
+                </td>
+              </tr>
+			</table>
+			<p>
+				As the ks is increased, the cloth is more stiff and wraps around the sphere less.
+			</p>
+			<table>
+			  <tr align="center">
+				<td>
+					<img src="images/Part3Plane.png" align="middle" width="400px"/>
+					<figcaption>Shaded Cloth on Plane</figcaption>
+				  </td>
+			  </tr>
+            </table>
+          </div>
+
+		<h3 align="middle">Part IV: Handling Self-Collisions</h3>
+		<div align="middle">
+            <table style="width:100%">
+              <tr align="left">
+				<td>
+					<img src="images/Part4Early.png" align="middle" width="400px"/>
+					<figcaption>Cloth Falling: Early </figcaption>
+				  </td>
+                <td>
+                  <img src="images/Part4Middle.png" align="middle" width="400px"/>
+                  <figcaption>Cloth Falling: Middle</figcaption>
+                </td>
+                <td>
+                  <img src="images/Part4Late.png" align="middle" width="400px"/>
+                  <figcaption>Cloth Falling: End</figcaption>
+                </td>
+              </tr>
+			</table>
+
+			<table>
+			  <tr align="center">
+				<td>
+					<img src="images/Part4Density1.png" align="middle" width="400px"/>
+					<figcaption>Density = 1</figcaption>
+				</td>
+				<td>
+					<img src="images/Part4Density20.png" align="middle" width="400px"/>
+					<figcaption>Density = 20</figcaption>
+				</td>
+			  </tr>
+			</table>
+			<p>
+				The cloth is stiffer for low density so it tends to fold over itself less in comparison 
+				to when the density is set to be higher. In the case when there is high density, the cloth
+				folds over itself more.
+			</p>
+
+			<table>
+			  <tr align="center">
+				<td>
+					<img src="images/Part4ks10.png" align="middle" width="400px"/>
+					<figcaption>ks = 10</figcaption>
+				</td>
+				<td>
+					<img src="images/Part4ks10000.png" align="middle" width="400px"/>
+					<figcaption>ks = 10000</figcaption>
+				</td>
+			  </tr>
+            </table>
+			<p>
+				The cloth is stiffer for higher ks values and tends to fold over itself less.
+				The cloth also more stable for higher ks values so it moves around less
+				compared to the lower ks values. 
+			</p>
+          </div>
+
+		<h3 align="middle">Part V: Shaders</h3>
+		<div align="middle">
+            <table style="width:100%">
+              <tr align="center">
+				<td>
+					<img src="images/Part5Ambient.png" align="middle" width="400px"/>
+					<figcaption>Only Ambient Component </figcaption>
+				  </td>
+                <td>
+                  <img src="images/Part5Diffuse.png" align="middle" width="400px"/>
+                  <figcaption>Only Diffuse Component</figcaption>
+                </td>
+				</tr>
+			</table>	
+			<table>
+				<tr align="center">
+                <td>
+			
+                  <img src="images/Part5Specular.png" align="middle" width="400px"/>
+                  <figcaption>Only Specular Component</figcaption>
+                </td>
+				<td>
+					<img src="images/Part5Phong.png" align="middle" width="400px"/>
+					<figcaption>All Components</figcaption>
+				  </td>
+				</tr>
+              </tr>
+			</table>
+			<p>
+				Blinn-Phong shading model incorporates the ambient, diffuse, and specular component.
+				The specular component is dependent on the view direction. This causes the material to appear bright
+				near the mirror reflection direction. The diffuse component is independent of
+				view direction. This allows the surface color to be the same in all viewing directions.
+				The ambient component does not depend on anything and adds constant color to account
+				for illumination that was disregarded. This allows it to fill in black shadows.
+			</p>
+			<table style="width:100%">
+			  <tr align="center">
+				<td>
+					<img src="images/Part5CustomTexture.png" align="middle" width="400px"/>
+					<figcaption>Custom Texture</figcaption>
+				</td>
+			  </tr>
+			</table>
+
+			<table style="width: 100%">
+			  <tr align="center">
+				<td>
+					<img src="images/Part5Bump.png" align="middle" width="400px"/>
+					<figcaption>Bump Mapping (default sphere)</figcaption>
+				</td>
+				<td>
+					<img src="images/Part5Displace.png" align="middle" width="400px"/>
+					<figcaption>Displacement Mapping (default sphere)</figcaption>
+				</td>
+			  </tr>
+			  <tr align="center">
+				<td>
+					<img src="images/Part5Bump16.png" align="middle" width="400px"/>
+					<figcaption>Bump Mapping (lower resolution sphere)</figcaption>
+				</td>
+				<td>
+					<img src="images/Part5Displace16.png" align="middle" width="400px"/>
+					<figcaption>Displacement Mapping (lower resolution sphere)</figcaption>
+				</td>
+			  </tr>
+			  <tr align="center">
+				<td>
+					<img src="images/Part5Bump128.png" align="middle" width="400px"/>
+					<figcaption>Bump Mapping (higher resolution sphere)</figcaption>
+				</td>
+				<td>
+					<img src="images/Part5Displace128.png" align="middle" width="400px"/>
+					<figcaption>Displacement Mapping (high resolution sphere)</figcaption>
+				</td>
+			  </tr>
+			</tr>
+			</table>
+			<p>
+				Displacement Mapping is more rough than the Bump Mapping. The details are
+				also more apparent in the displacement shader since it changes the geometry
+				of the mesh. The difference between the higher resolution mesh and lower
+				resolution mesh isn't really visible to us and we think the reason why is because
+				we used the sphere equation to determine the sphere collision instead of the triangles
+				of the sphere mesh.  
+			</p>
+			<table>
+			<tr align="center">
+			  <td>
+				  <img src="images/Part5Mirror.png" align="middle" width="400px"/>
+				  <figcaption>Mirror Shader</figcaption>
+			  </td>
+			</tr>
+            </table>
+
+			<table>
+				<tr align="center">
+				  <td>
+					  <img src="images/Part5CustomShader.jpeg" align="middle" width="400px"/>
+					  <figcaption>Custom Shader</figcaption>
+				  </td>
+				</tr>
+			</table>
+			<p>
+				For our custom shader, we decided to combine the Displacement and Mirror Shader. 
+				We also added our own image to the cube map to make a unique render.
+			</p>
+          </div>
+</body>
 </html>
